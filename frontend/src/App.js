@@ -1,24 +1,35 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { BrowserRouter, Route, Link } from 'react-router-dom';
+import PantallaCarrito from './pantallas/PantallaCarrito';
 import PantallaInicio from './pantallas/PantallaInicio';
 import ProductoPantalla from './pantallas/ProductoPantalla';
 
 function App() {
+
+    const carrito = useSelector((state) => state.carrito);
+    const { carritoItems } = carrito;
+
   return (
       <BrowserRouter>
     <div className="grid-container">
         <header className="row">
             <div>
-                <a className="brand" href="/">
+                <Link className="brand" to="/">
                     Akshan Gaming
-                </a>
+                </Link>
             </div>
             <div>
-                <a href="/carrito">Carrito</a>
-                <a href="/registrarse">Registrarse</a>
+                <Link to="/carrito">Carrito
+                {carritoItems.length > 0 && (
+                    <span className="contadoritems">{carritoItems.length}</span>
+                )}
+                </Link>
+                <Link to="/registrarse">Registrarse</Link>
             </div>
         </header>
     <main>
+        <Route path="/carrito/:id?" component={PantallaCarrito}></Route>
         <Route path="/producto/:id" component={ProductoPantalla}></Route>
         <Route path="/" component={PantallaInicio} exact></Route>
         </main>

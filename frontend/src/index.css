@@ -11,7 +11,7 @@ html{
     box-sizing: border-box;
 }
 body{
-    font-size: 1.6rem;
+    font-size: 2rem;
     font-family: 'Bebas Neue', cursive;
     height: 100vh;
     margin: 0;
@@ -66,6 +66,9 @@ ul{
 li{
   margin-top: 1rem;
 }
+input,
+select,
+textarea,
 button{
   padding: 1rem;
   border-radius: 0.5rem;
@@ -74,9 +77,14 @@ button{
   font-family: 'Roboto', sans-serif;
    -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: gray;
+}
+button{
+  background-color: #f8f8f8;
   cursor: pointer;
 }
+input:hover,
+select:hover,
+textarea:hover,
 button:hover{
   color: 0.1rem black solid;
 }
@@ -94,6 +102,14 @@ a.brand{
   color: #ffe2f4;
   font-size: 3rem;
   font-weight: bold;
+}
+.contadoritems{
+  background-color: rosybrown;
+  color: white;
+  border-radius: 50%;
+  padding: 0.1rem 1rem;
+  font-size: 2rem;
+  margin-left: 0.4rem;
 }
 .row{
   display: flex;
