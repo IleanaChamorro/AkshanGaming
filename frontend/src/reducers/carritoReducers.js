@@ -1,4 +1,4 @@
-import { CARRITO_AÑADIR_ITEM } from "../constantes/carritoConstantes";
+import { CARRITO_AÑADIR_ITEM, CARRITO_REMOVER_ITEM } from "../constantes/carritoConstantes";
 
 export const carritoReducer = (state = { carritoItems: [] }, action) => {
     switch (action.type) {
@@ -13,6 +13,11 @@ export const carritoReducer = (state = { carritoItems: [] }, action) => {
         } else {
             return { ...state, carritoItems: [...state.carritoItems, item ] };
         }
+        case CARRITO_REMOVER_ITEM:
+            return{ 
+            ...state,
+             carritoItems: state.carritoItems.filter((x) => x.producto !== action.payload),
+            };
         default:
             return state;
     }

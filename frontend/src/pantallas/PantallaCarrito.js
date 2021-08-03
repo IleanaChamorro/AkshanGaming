@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { añadirAlCarrito } from '../acciones/carritoAcciones';
+import { añadirAlCarrito, removerDelCarrito } from '../acciones/carritoAcciones';
 import CajaMensaje from '../componentes/CajaMensaje';
 
 export default function PantallaCarrito(props) {
@@ -19,8 +19,9 @@ export default function PantallaCarrito(props) {
         }
     }, [dispatch, productoId, cantidad]);
 
-    const removerDelCarrito = (id) =>{
+    const removerDelCarritoBoton = (id) =>{
         //Remover producto del carrito
+        dispatch(removerDelCarrito(id));
     };
 
     //continuar compra
@@ -69,7 +70,7 @@ export default function PantallaCarrito(props) {
                                        <div>
                                            <button 
                                            type="button"
-                                           onClick={() => removerDelCarrito(item.producto)}
+                                           onClick={() => removerDelCarritoBoton(item.producto)}
                                            >
                                                Eliminar Producto
                                            </button>
