@@ -1,5 +1,21 @@
 //Lista de productos con sus respectivos detalles 
+import bcrypt from 'bcryptjs';
+
 const data = {
+    usuarios: [
+        {
+            nombre: 'Adra',
+            email: 'admin@mail.com',
+            contraseña: bcrypt.hashSync('1234', 8),
+            esAdmin: true,
+        },
+        {
+            nombre: 'Ileana',
+            email: 'usuario@mail.com',
+            contraseña: bcrypt.hashSync('1234', 8),
+            esAdmin: false,
+        },
+    ],
     productos:[
         {
             _id:'1',
