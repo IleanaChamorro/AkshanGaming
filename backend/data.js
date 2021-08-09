@@ -18,7 +18,6 @@ const data = {
     ],
     productos:[
         {
-            _id:'1',
             nombre: 'MotherBoard Asus Prime A320m-k',
             categoria: 'Acc. Computacion',
             imagen: '/imagenes/motherboard.jpg',
@@ -29,7 +28,6 @@ const data = {
             disponibilidadStock: 5,
         },
         {
-            _id:'2',
             nombre: 'Teclado Multimedia DELL',
             categoria: 'Acc. Computacion',
             imagen: '/imagenes/teclado.jpg',
@@ -40,7 +38,6 @@ const data = {
             disponibilidadStock: 5,
         },
         {
-            _id:'3',
             nombre: 'Auriculares Gamer Inalámbricos',
             categoria: 'Acc. Computacion',
             imagen: '/imagenes/auriculares.jpeg',
@@ -51,7 +48,6 @@ const data = {
             disponibilidadStock: 5,
         },
         {
-            _id:'4',
             nombre: 'Monitor Gamer Samsung',
             categoria: 'Acc. Computacion',
             imagen: '/imagenes/monitor.jpg',
@@ -62,7 +58,6 @@ const data = {
             disponibilidadStock: 5,
         },
         {
-            _id:'5',
             nombre: 'Pc Armada Dual Core',
             categoria: 'Acc. Computacion',
             imagen: '/imagenes/pcarmada.jpg',

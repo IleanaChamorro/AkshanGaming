@@ -1,7 +1,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
-import data from './data.js';
 import usuarioRouter from './routers/usuarioRouter.js';
+import productoRouter from './routers/productoRouter.js'; 
 
 const app = express();
 mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost/AkshanGaming', {
@@ -9,18 +9,12 @@ mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost/AkshanGaming', 
   useUnifiedTopology: true,
   useCreateIndex: true,
 });
+
+//Usuarios 
 app.use('/api/usuarios', usuarioRouter);
-app.get('/api/productos/:id', (req, res) => {
-    const producto = data.productos.find(x => x._id === req.params.id);
-    if(producto){
-        res.send(producto);
-    }else{
-        res.status(400).send({message: 'Lo sentimos, Este producto no existe'});
-    }
-});
-app.get('/api/productos', (req,res) => {
-    res.send(data.productos);
-});
+
+//Productos
+app.use('/api/productos', productoRouter);
 
 app.get('/', (req, res) => {
     res.send('Servidor Listo')
