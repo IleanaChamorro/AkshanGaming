@@ -1,9 +1,17 @@
 import express from 'express';
 import mongoose from 'mongoose';
+import dotenv from 'dotenv';
 import usuarioRouter from './routers/usuarioRouter.js';
 import productoRouter from './routers/productoRouter.js'; 
 
+dotenv.config();
+
+
 const app = express();
+
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
+
 mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost/AkshanGaming', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
