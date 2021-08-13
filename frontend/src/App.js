@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Link } from 'react-router-dom';
 import PantallaCarrito from './pantallas/PantallaCarrito';
 import PantallaInicio from './pantallas/PantallaInicio';
 import ProductoPantalla from './pantallas/ProductoPantalla';
+import Pantallaregistrarse from './pantallas/Pantallaregistrarse';
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
     <main>
         <Route path="/carrito/:id?" component={PantallaCarrito}></Route>
         <Route path="/producto/:id" component={ProductoPantalla}></Route>
+        <Route path="/registrarse" component={Pantallaregistrarse}></Route>
         <Route path="/" component={PantallaInicio} exact></Route>
         </main>
             <footer className="row center">
